@@ -34,7 +34,6 @@ import {
   Sun,
   Terminal,
   Trophy,
-  UserRound,
   Workflow,
   X,
   Youtube,
@@ -221,13 +220,19 @@ function Hero() {
       <Reveal className="hero-visual-wrap" delay={140}>
         <div className="hero-visual">
           <div className="visual-topline"><span>PROFILE / 001</span><span className="visual-live"><i /> OPEN TO IDEAS</span></div>
-          <div className="portrait-placeholder" role="img" aria-label="Professional profile photo placeholder">
+          <div className="portrait-placeholder" role="img" aria-label="Portrait of Vikas Gupta">
             <div className="portrait-ring portrait-ring--outer" />
             <div className="portrait-ring portrait-ring--inner" />
             <div className="portrait-glow" />
-            <div className="portrait-initials">VG</div>
-            <div className="portrait-icon"><UserRound size={24} strokeWidth={1.4} /></div>
-            <span className="portrait-caption">PROFILE PHOTO PLACEHOLDER</span>
+            <img
+              className="portrait-photo"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${personalInfo.photoUrl}`}
+              alt=""
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+            <span className="portrait-caption">VIKAS GUPTA · INDIA</span>
           </div>
           <div className="visual-bottomline">
             <div><span className="visual-label">FOCUS</span><strong>Applied AI<br />for real workflows</strong></div>

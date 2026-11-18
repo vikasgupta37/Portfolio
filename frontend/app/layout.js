@@ -15,11 +15,13 @@ export const metadata = {
     title: `${personalInfo.name} — ${personalInfo.shortTitle}`,
     description: personalInfo.headline,
     siteName: `${personalInfo.name} Portfolio`,
+    images: [`${siteUrl}images/vikas-gupta.jpg`],
   },
   twitter: {
     card: 'summary',
     title: `${personalInfo.name} — ${personalInfo.shortTitle}`,
     description: personalInfo.headline,
+    images: [`${siteUrl}images/vikas-gupta.jpg`],
   },
   alternates: { canonical: siteUrl },
 };

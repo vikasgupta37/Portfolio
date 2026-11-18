@@ -13,6 +13,7 @@ export type PersonalInfo = {
   headline: string;
   heroHeadline: string;
   summary: string;
+  photoUrl: string;
   resumeUrl: string | null;
 };
 
@@ -27,6 +28,7 @@ export const personalInfo: PersonalInfo = {
   experience: "3+ Years",
   email: "vikasgupta945431@gmail.com",
   githubUsername: "vikasgupta37",
+  photoUrl: "/images/vikas-gupta.jpg",
   resumeUrl: null,
   headline:
     "Forward Deployment Engineer (AI Developer) | OpenAI Adoption CoE | Agentic AI | Generative AI | LLMs | RAG | AI Automation | Python | Codex | Azure AI",
