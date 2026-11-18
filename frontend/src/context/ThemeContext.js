@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 import {
   canUseDOM,
-  getPreferredColorScheme,
   getSafeStorageValue,
   setSafeStorageValue,
 } from "../lib/browser";
@@ -14,7 +13,7 @@ export const ThemeProvider = ({ children }) => {
     const storedTheme = getSafeStorageValue("theme");
     return storedTheme === "dark" || storedTheme === "light"
       ? storedTheme
-      : getPreferredColorScheme();
+      : "dark";
   });
 
   useEffect(() => {

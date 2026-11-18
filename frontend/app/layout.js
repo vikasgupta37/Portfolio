@@ -1,39 +1,39 @@
-import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
-import { personalInfo } from '@/data/mock';
+import { personalInfo } from '@/data/portfolio';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
+const siteUrl = 'https://vikasgupta37.github.io/Portfolio/';
 
 export const metadata = {
-  title: `${personalInfo.name} - ${personalInfo.title}`,
-  description: personalInfo.bio,
+  metadataBase: new URL(siteUrl),
+  title: `${personalInfo.name} — ${personalInfo.shortTitle}`,
+  description: personalInfo.headline,
+  applicationName: `${personalInfo.name} Portfolio`,
   openGraph: {
     type: 'website',
-    title: `${personalInfo.name} - ${personalInfo.title}`,
-    description: personalInfo.bio,
+    url: siteUrl,
+    title: `${personalInfo.name} — ${personalInfo.shortTitle}`,
+    description: personalInfo.headline,
+    siteName: `${personalInfo.name} Portfolio`,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: `${personalInfo.name} - ${personalInfo.title}`,
-    description: personalInfo.bio,
-  }
+    card: 'summary',
+    title: `${personalInfo.name} — ${personalInfo.shortTitle}`,
+    description: personalInfo.headline,
+  },
+  alternates: { canonical: siteUrl },
 };
 
 export const viewport = {
-  themeColor: '#2563eb',
+  themeColor: '#080b12',
+  colorScheme: 'dark light',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${outfit.variable}`}>
-      <body className="bg-background text-foreground font-sans antialiased">
-        <Providers>
-          <div className="App transition-colors duration-300">
-            {children}
-          </div>
-        </Providers>
+    <html lang="en" className="dark">
+      <body>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

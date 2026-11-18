@@ -1,75 +1,32 @@
-# Developer Portfolio
+# Vikas Gupta — Portfolio
 
-Modern, responsive developer portfolio built with React and Tailwind. All content is editable via a single config file.
+A responsive personal portfolio for Vikas Gupta, Forward Deployment Engineer I (AI Developer) at HCLTech's OpenAI Adoption CoE. Built with Next.js App Router, React, TypeScript, Tailwind CSS, Framer Motion, and Lucide icons.
 
-## Features
-
-- Single source of truth: `frontend/src/data/mock.js`
-- Toggle sections (hero, projects, open source, about, footer)
-- Filterable projects + featured flag
-- GitHub repo showcase + contributions list
-- Timeline (experience & education)
-- Contact modal + floating button
-- Responsive layout, accessible animations, and defensive browser fallbacks
-
-## Quick Start
+## Run locally
 
 ```bash
-git clone <repo-url>
-cd <repo>
 cd frontend
 yarn install
-yarn start
+yarn dev
 ```
 
-## Customize Content
+Open `http://localhost:3000`.
 
-Edit `frontend/src/data/mock.js` for:
+## Portfolio content
 
-- sections visibility
-- navigation items
-- personalInfo, socialLinks
-- projects, openSourceRepos, skills, timeline, contributions
+Update [`frontend/src/data/portfolio.ts`](frontend/src/data/portfolio.ts) to change profile details, experience, education, skills, projects, certifications, achievements, social profiles, or section settings. `frontend/src/data/mock.js` re-exports this data for older components.
 
-Example toggle:
+Project status, dates, verification links, resume files, and repository URLs are only shown when supplied. The contact form is a labeled placeholder until a submission service is configured; the email link works now. The GitHub repository section reads public repository data from GitHub at runtime and omits the feed if it is unavailable.
 
-```js
-sections: { showHero: true, showProjects: true, showOpenSource: false }
-```
+## GitHub Pages deployment
 
-Add a project:
+Push to `main` to build and deploy the static export with GitHub Actions. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The workflow sets `NEXT_PUBLIC_BASE_PATH` from the repository name, builds `frontend/out`, then deploys the artifact.
 
-```js
-{ id: 7, title: "Project", category: "Apps", techStack: ["React"], featured: true }
-```
-
-## Deploy (GitHub Pages)
-
-Set `homepage` in `frontend/package.json`, push `main`, enable Pages (GitHub Actions).
-
-Manual build:
+For a local production build:
 
 ```bash
 cd frontend
-yarn build
+NEXT_PUBLIC_BASE_PATH=/Portfolio yarn build
 ```
 
-Deploy the `build` folder.
-
-## Styling
-
-Adjust Tailwind classes in components (Hero, Projects, Header). Primary accent uses `bg-blue-600` / `text-blue-600`.
-
-## Tech Stack
-
-React 18 - React Router - Tailwind CSS - Lucide Icons - clsx + tailwind-merge
-
-## Scripts
-
-`yarn start` dev, `yarn build` prod, `yarn test` tests
-
-## License
-
-MIT
-
-Built with React.
+The generated static site is in `frontend/out`.

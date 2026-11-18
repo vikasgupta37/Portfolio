@@ -1,26 +1,22 @@
-# Portfolio Frontend
+# Portfolio frontend
 
-React 18 portfolio frontend built with CRACO, React Router, Tailwind CSS, and Lucide icons.
+Next.js App Router site with a static export for GitHub Pages.
 
-## Package Manager
-
-Use Yarn only. The root workflow and `package.json` declare Yarn, and `yarn.lock` is the single dependency lockfile.
-
-## Scripts
+## Development
 
 ```bash
-yarn install --frozen-lockfile
-yarn start
-yarn build
-yarn test
+yarn install
+yarn dev
 ```
 
 ## Content
 
-Most portfolio content and section toggles live in `src/data/mock.js`.
+Edit `src/data/portfolio.ts`. It centralizes personal details, experience, education, skills, projects, certifications, achievements, social links, and site configuration. The older `src/data/mock.js` path re-exports the central data.
 
-## Runtime Notes
+## Build and deploy
 
-- External links are filtered to HTTP(S) URLs before rendering.
-- Browser APIs such as storage, view transitions, scrolling, and intersection observers have guarded fallbacks.
-- Optional development plugins in `craco.config.js` are loaded only when enabled and available.
+```bash
+NEXT_PUBLIC_BASE_PATH=/Portfolio yarn build
+```
+
+Next exports the site to `out/`. The root GitHub Actions workflow builds this directory on pushes to `main` and deploys it to GitHub Pages. Set the repository's Pages source to **GitHub Actions**.
