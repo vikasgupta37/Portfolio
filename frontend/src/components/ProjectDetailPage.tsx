@@ -65,6 +65,28 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
           </section>
         )}
 
+        {project.gallery && (
+          <section className="detail-gallery" aria-labelledby={`${project.id}-gallery-title`}>
+            <div className="detail-gallery-heading">
+              <span>PHOTO STORY</span>
+              <h2 id={`${project.id}-gallery-title`}>{project.gallery.title}</h2>
+            </div>
+            <div className="detail-gallery-grid">
+              {project.gallery.images.map((image) => (
+                <figure className="detail-gallery-item" key={image.src}>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${image.src}`}
+                    alt={image.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
         {project.goal && (
           <section className="detail-section">
             <div className="detail-section-label"><span>01</span> INTENDED GOAL</div>

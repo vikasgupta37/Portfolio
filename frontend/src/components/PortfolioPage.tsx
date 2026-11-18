@@ -54,6 +54,7 @@ import {
   siteConfig,
   skills,
   socialLinks,
+  volunteering,
 } from '@/data/portfolio';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -325,11 +326,39 @@ function Experience() {
   );
 }
 
+function Volunteering() {
+  return (
+    <section className="section-shell section-block volunteering-section" id="volunteering">
+      <Reveal>
+        <SectionHeading eyebrow="Volunteering" title="Contributing through community and culture." number="03">
+          Community and employee engagement activities shared for this portfolio.
+        </SectionHeading>
+      </Reveal>
+      <div className="volunteer-grid">
+        {volunteering.map((item, index) => (
+          <Reveal key={`${item.organization}-${item.role}`} delay={index * 80}>
+            <article className="volunteer-card">
+              <span className="volunteer-index">COMMUNITY / {String(index + 1).padStart(2, '0')}</span>
+              <div className="volunteer-heading">
+                <h3>{item.role}</h3>
+                <span className="company-label">{item.organization}</span>
+              </div>
+              <p className="volunteer-period">{item.period}</p>
+              {item.focus && <span className="volunteer-focus">{item.focus}</span>}
+              {item.summary && <p className="volunteer-summary">{item.summary}</p>}
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Skills() {
   return (
     <section className="section-shell section-block" id="skills">
       <Reveal>
-        <SectionHeading eyebrow="Technical toolkit" title="A connected set of skills." number="03">
+        <SectionHeading eyebrow="Technical toolkit" title="A connected set of skills." number="04">
           Tools and disciplines across AI, development, cloud, automation, and enterprise platforms.
         </SectionHeading>
       </Reveal>
@@ -428,7 +457,7 @@ function Projects() {
   return (
     <section className="section-shell section-block section-block--tint" id="projects">
       <Reveal>
-        <SectionHeading eyebrow="Selected work" title="Ideas built for real-world impact." number="04">
+        <SectionHeading eyebrow="Selected work" title="Ideas built for real-world impact." number="05">
           A selection of AI and automation concepts. Implementation status and repository links are shown only where provided.
         </SectionHeading>
       </Reveal>
@@ -480,7 +509,7 @@ function GitHubShowcase() {
     <section className="section-shell section-block github-section" id="github">
       <div className="github-heading-row">
         <Reveal>
-          <SectionHeading eyebrow="Open source · GitHub" title="Work in the open." number="05">
+          <SectionHeading eyebrow="Open source · GitHub" title="Work in the open." number="06">
             Public repositories loaded from GitHub for <strong>@{personalInfo.githubUsername}</strong>. Repository details and counts are live data, not estimates.
           </SectionHeading>
         </Reveal>
@@ -538,7 +567,7 @@ function Certifications() {
     <section className="section-shell section-block section-block--tint" id="certifications">
       <div className="certification-heading-row">
         <Reveal>
-          <SectionHeading eyebrow="Credentials" title="Learning, applied." number="06">
+          <SectionHeading eyebrow="Credentials" title="Learning, applied." number="07">
             Certification details are limited to the names supplied. Individual badge images and verification URLs can be added when available.
           </SectionHeading>
         </Reveal>
@@ -573,7 +602,7 @@ function Achievements() {
   return (
     <section className="section-shell section-block" id="recognition">
       <Reveal>
-        <SectionHeading eyebrow="Achievements & recognition" title="Milestones along the way." number="07">
+        <SectionHeading eyebrow="Achievements & recognition" title="Milestones along the way." number="08">
           Hackathon participation, professional recognition, and the supplied certification achievement.
         </SectionHeading>
       </Reveal>
@@ -602,7 +631,7 @@ function Education() {
     <section className="section-shell section-block section-block--tint" id="education">
       <div className="education-layout">
         <Reveal>
-          <SectionHeading eyebrow="Education" title="The foundation." number="08">
+          <SectionHeading eyebrow="Education" title="The foundation." number="09">
             Academic details shared for this portfolio.
           </SectionHeading>
         </Reveal>
@@ -626,7 +655,7 @@ function CareerTimeline() {
   return (
     <section className="section-shell section-block" id="timeline">
       <Reveal>
-        <SectionHeading eyebrow="Career path" title="An evolving practice." number="09">
+        <SectionHeading eyebrow="Career path" title="An evolving practice." number="10">
           A timeline of roles and dates at HCLTech.
         </SectionHeading>
       </Reveal>
@@ -651,7 +680,7 @@ function Contact() {
       <div className="contact-glow" aria-hidden="true" />
       <div className="contact-layout">
         <Reveal>
-          <SectionHeading eyebrow="Contact" title={<>Let’s build something<br />useful together.</>} number="10">
+          <SectionHeading eyebrow="Contact" title={<>Let’s build something<br />useful together.</>} number="11">
             For conversations about enterprise AI, adoption, and intelligent automation, reach me directly or connect through my profiles.
           </SectionHeading>
           <a className="contact-email" href={`mailto:${personalInfo.email}`}><span><Mail size={18} /></span>{personalInfo.email}<ArrowUpRight size={17} /></a>
@@ -723,6 +752,7 @@ export default function PortfolioPage() {
         {siteConfig.sections.showHero && <Hero />}
         {siteConfig.sections.showAbout && <About />}
         {siteConfig.sections.showExperience && <Experience />}
+        {siteConfig.sections.showVolunteering && <Volunteering />}
         {siteConfig.sections.showSkills && <Skills />}
         {siteConfig.sections.showProjects && <Projects />}
         {siteConfig.sections.showGitHub && <GitHubShowcase />}

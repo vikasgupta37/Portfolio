@@ -203,6 +203,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .experience-role-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }
 .experience-role-skills span { padding: 4px 7px; border: 1px solid var(--line); border-radius: 3px; color: var(--muted); background: color-mix(in srgb, var(--bg) 55%, transparent); font-size: 8px; }
 .experience-role-skills span:last-child:not(:first-child) { color: var(--blue-bright); }
+.volunteer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 43px; }
+.volunteer-card { min-height: 190px; padding: 20px; border: 1px solid var(--line); border-radius: 7px; background: linear-gradient(150deg, var(--surface), color-mix(in srgb, var(--surface-alt) 86%, transparent)); }
+.volunteer-index { color: var(--dim); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .12em; }
+.volunteer-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 16px; }
+.volunteer-heading h3 { margin: 0; font-size: 17px; font-weight: 640; letter-spacing: -.025em; }
+.volunteer-period { margin: 9px 0 0; color: var(--muted); font-size: 10px; }
+.volunteer-focus { display: inline-flex; margin-top: 13px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--blue-bright); font-size: 9px; }
+.volunteer-summary { margin: 13px 0 0; color: var(--text-soft); font-size: 10px; line-height: 1.7; }
 
 /* Skills */
 .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin-top: 47px; }
@@ -301,6 +309,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .detail-highlight > div:last-child > span, .detail-links > div > span { color: #e1c271; font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .13em; }
 .detail-highlight h2 { margin: 7px 0 0; font-size: 17px; line-height: 1.4; }
 .detail-highlight p { margin: 7px 0 0; color: var(--muted); font-size: 10px; }
+.detail-gallery { margin-top: 40px; padding-block: 38px 42px; border-block: 1px solid var(--line); }
+.detail-gallery-heading > span { color: var(--blue); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .14em; }
+.detail-gallery-heading h2 { max-width: 700px; margin: 10px 0 0; font-size: clamp(24px, 4vw, 36px); font-weight: 640; letter-spacing: -.045em; line-height: 1.2; }
+.detail-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 25px; }
+.detail-gallery-item { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.detail-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #080d19; }
+.detail-gallery-item figcaption { min-height: 36px; padding: 10px 11px; color: var(--muted); font-size: 9px; line-height: 1.45; }
 .detail-section { display: grid; grid-template-columns: 190px 1fr; gap: 28px; padding-block: 43px; border-bottom: 1px solid var(--line); }
 .detail-section-label { display: flex; align-items: flex-start; gap: 10px; padding-top: 6px; color: var(--muted); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .1em; }
 .detail-section-label span { color: var(--blue); }
@@ -461,6 +476,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .about-layout, .education-layout, .contact-layout { grid-template-columns: 1fr; gap: 38px; }
   .about-aside { max-width: 520px; }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detail-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .projects-grid { gap: 12px; }
   .project-visual { height: 160px; }
   .repo-grid, .certifications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -499,6 +515,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .about-fact--wide { min-height: 73px; }
   .about-fact--primary strong { font-size: 55px; }
   .experience-card { grid-template-columns: 35px 1fr; gap: 5px; }
+  .volunteer-grid { grid-template-columns: 1fr; }
+  .volunteer-card { min-height: 0; padding: 16px; }
+  .volunteer-heading { flex-direction: column; gap: 9px; }
   .experience-marker { gap: 6px; font-size: 8px; }
   .experience-heading { flex-direction: column; gap: 10px; }
   .experience-heading h3 { font-size: 21px; }
@@ -555,6 +574,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .detail-subtitle { font-size: 14px; }
   .detail-description { font-size: 12px; }
   .detail-art { min-height: 220px; }
+  .detail-gallery { padding-block: 28px 32px; }
+  .detail-gallery-grid { gap: 8px; }
+  .detail-gallery-item figcaption { min-height: 34px; padding: 8px; font-size: 8px; }
   .detail-art-ring { width: 170px; }
   .detail-art-ring--two { width: 125px; }
   .detail-art-icon { width: 90px; height: 90px; border-radius: 27px; }

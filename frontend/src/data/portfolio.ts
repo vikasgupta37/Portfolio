@@ -70,6 +70,7 @@ export const siteConfig = {
     showHero: true,
     showAbout: true,
     showExperience: true,
+    showVolunteering: true,
     showSkills: true,
     showProjects: true,
     showGitHub: true,
@@ -82,6 +83,7 @@ export const siteConfig = {
   navigationItems: [
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
+    { id: "volunteering", label: "Volunteering" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "certifications", label: "Certifications" },
@@ -182,6 +184,30 @@ export const experience: ExperienceItem[] = [
     ],
     roleSkills: ["Cmd", "ADFS"],
     additionalSkills: 16,
+  },
+];
+
+export type VolunteeringItem = {
+  role: string;
+  organization: string;
+  period: string;
+  focus?: string;
+  summary?: string;
+};
+
+export const volunteering: VolunteeringItem[] = [
+  {
+    role: "Public Sector",
+    organization: "HCLFoundation",
+    period: "Jul 2024 – Present",
+    focus: "Education",
+  },
+  {
+    role: "Employee Engagement - Spark",
+    organization: "HCLTech",
+    period: "Jun 2024 – Present",
+    summary:
+      "I'm working with the employee engagement Team at HCLTech as a #spark, organizing various events at #HCLTech #Lucknow.",
   },
 ];
 
@@ -287,6 +313,10 @@ export type Project = {
   proposedAgents?: string[];
   features?: string[];
   imageUrl?: string;
+  gallery?: {
+    title: string;
+    images: { src: string; alt: string; caption: string }[];
+  };
   repositoryUrl: string | null;
   repositoryNote: string;
 };
@@ -306,6 +336,41 @@ export const projects: Project[] = [
       "Global Top 10 Finalist — HCLTech × OpenAI Global Agentic AI Hackathon",
     recognition:
       "Selected among the Top 10 finalists from 5,000+ participants and 500+ solution submissions.",
+    gallery: {
+      title: "Global Top 10 Finalist — A Journey Worth Celebrating",
+      images: [
+        {
+          src: "/images/swarma-finalist-award.png",
+          alt: "Vikas receiving a potted plant at an HCLTech event",
+          caption: "Celebrating the finalist recognition",
+        },
+        {
+          src: "/images/swarma-conference-selfie.png",
+          alt: "Vikas taking a group selfie with attendees at a technology event",
+          caption: "Meeting fellow attendees",
+        },
+        {
+          src: "/images/swarma-openai-event-selfie.png",
+          alt: "Vikas standing with an attendee at a technology event",
+          caption: "Sharing the event with fellow attendees",
+        },
+        {
+          src: "/images/swarma-recognition-team.png",
+          alt: "Participants holding certificates on stage at a technology event",
+          caption: "A recognition moment with fellow participants",
+        },
+        {
+          src: "/images/swarma-hackathon-finalists.png",
+          alt: "Finalists gathered at the Agentic AI Hackathon grand finale",
+          caption: "Agentic AI Hackathon grand finale",
+        },
+        {
+          src: "/images/openai-devday-exchange.png",
+          alt: "Vikas with fellow attendees at OpenAI DevDay Exchange in Bengaluru",
+          caption: "OpenAI DevDay Exchange, Bengaluru",
+        },
+      ],
+    },
     technologies: ["Python", "Generative AI", "Agentic AI", "LLMs", "AI Automation"],
     repositoryUrl: null,
     repositoryNote: "Repository URL to be added",
