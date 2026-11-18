@@ -29,7 +29,7 @@ export const personalInfo: PersonalInfo = {
   email: "vikasgupta945431@gmail.com",
   githubUsername: "vikasgupta37",
   photoUrl: "/images/vikas-gupta.jpg",
-  resumeUrl: null,
+  resumeUrl: "/Vikas_Gupta_Resume.pdf",
   headline:
     "Forward Deployment Engineer (AI Developer) | OpenAI Adoption CoE | Agentic AI | Generative AI | LLMs | RAG | AI Automation | Python | Codex | Azure AI",
   heroHeadline:

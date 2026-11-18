@@ -197,7 +197,11 @@ function Hero() {
             <a className="button button--primary" href="#projects">Explore projects <ArrowDownRight size={17} /></a>
             <a className="button button--secondary" href={`mailto:${personalInfo.email}`}>Get in touch <ArrowUpRight size={16} /></a>
             {personalInfo.resumeUrl ? (
-              <a className="button button--resume" href={personalInfo.resumeUrl} download>
+              <a
+                className="button button--resume"
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${personalInfo.resumeUrl}`}
+                download={personalInfo.resumeUrl.split('/').pop()}
+              >
                 Download resume <ArrowDown size={16} />
               </a>
             ) : (
