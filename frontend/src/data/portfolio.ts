@@ -24,7 +24,7 @@ export const personalInfo: PersonalInfo = {
   shortTitle: "Forward Deployment Engineer | AI Developer",
   company: "HCLTech",
   organization: "OpenAI Adoption CoE – CTO & Ecosystem",
-  location: "India",
+  location: "Lucknow, Uttar Pradesh, India",
   experience: "3+ Years",
   email: "vikasgupta945431@gmail.com",
   githubUsername: "vikasgupta37",
@@ -93,8 +93,13 @@ export type ExperienceItem = {
   company: string;
   organization?: string;
   status: string;
-  summary: string;
+  period: string;
+  employmentType: string;
+  workMode: string;
+  summary?: string;
   focus: string[];
+  roleSkills?: string[];
+  additionalSkills?: number;
 };
 
 export const experience: ExperienceItem[] = [
@@ -103,37 +108,78 @@ export const experience: ExperienceItem[] = [
     company: "HCLTech",
     organization: "OpenAI Adoption CoE – CTO & Ecosystem",
     status: "Current role",
-    summary:
-      "Supporting enterprise AI adoption and building practical AI-powered workflows and solutions.",
+    period: "Nov 2026 – Present",
+    employmentType: "Full-time",
+    workMode: "Remote",
+    summary: "Exploring Agentic AI, RAG, MCP, and multi-agent architectures to solve real-world business problems.",
     focus: [
-      "ChatGPT Enterprise adoption",
-      "OpenAI Codex adoption and enablement",
-      "OpenAI API integrations",
-      "Enterprise AI platform operations",
-      "Agentic AI workflows",
-      "AI adoption analytics and reporting",
-      "User activation and enablement",
-      "AI-assisted workflow automation",
-      "Reusable AI templates and operational playbooks",
-      "Enterprise AI transformation",
+      "Working with OpenAI technologies, ChatGPT Enterprise, Codex, and AI-powered automation.",
     ],
+    roleSkills: ["Agentic AI Development", "Generative AI"],
+    additionalSkills: 5,
   },
   {
-    role: "Applications Packaging & Deployment",
+    role: "AI Engineer",
     company: "HCLTech",
     status: "Previous role",
-    summary:
-      "Experience in application lifecycle management, endpoint deployment, troubleshooting, and operational automation.",
+    period: "Apr 2026 – Nov 2026",
+    employmentType: "Full-time",
+    workMode: "Hybrid",
+    summary: "Built AI Agents using LLMs, Python and enterprise APIs.",
     focus: [
-      "Application packaging and deployment",
-      "PowerShell scripting and automation",
-      "Microsoft endpoint management",
-      "Application troubleshooting",
-      "Software deployment automation",
-      "Microsoft Intune and SCCM",
-      "Operational process improvement",
-      "Application lifecycle management",
+      "Developed Generative AI solutions with Amazon Bedrock, Gemini, and Azure AI.",
     ],
+    roleSkills: ["Prompt Engineering", "Python"],
+    additionalSkills: 17,
+  },
+  {
+    role: "Senior Software Analyst",
+    company: "HCLTech",
+    status: "Previous role",
+    period: "Jun 2025 – Mar 2026",
+    employmentType: "Full-time",
+    workMode: "Hybrid",
+    summary:
+      "Supported Application Packaging Factory (APF) operations by developing, automating, and deploying enterprise application packages to improve deployment efficiency, standardization, and end-user experience.",
+    focus: [],
+    roleSkills: ["Application Packaging", "Automation"],
+    additionalSkills: 8,
+  },
+  {
+    role: "Software Analyst",
+    company: "HCLTech",
+    status: "Previous role",
+    period: "Jan 2024 – May 2025",
+    employmentType: "Full-time",
+    workMode: "Hybrid",
+    summary:
+      "After completing my 12 months training in HCL Technologies, I started my first full-time role at HCL on 1 Jan 2024.",
+    focus: [],
+    roleSkills: ["Microsoft Intune", "MDM"],
+    additionalSkills: 3,
+  },
+  {
+    role: "Project Intern",
+    company: "HCLTech",
+    status: "Previous role",
+    period: "Jul 2023 – Dec 2023",
+    employmentType: "Internship",
+    workMode: "Hybrid",
+    focus: [],
+  },
+  {
+    role: "Trainee",
+    company: "HCLTech",
+    status: "Previous role",
+    period: "Jan 2023 – Jun 2023",
+    employmentType: "Apprenticeship",
+    workMode: "Remote",
+    focus: [
+      "Learned about basics and advanced concepts of Operating Systems.",
+      "Learned about Office 365, Exchange Server, and SharePoint.",
+    ],
+    roleSkills: ["Cmd", "ADFS"],
+    additionalSkills: 16,
   },
 ];
 
@@ -464,23 +510,48 @@ export const achievements = [
   },
 ];
 
-export const careerTimeline = [
+export type CareerTimelineItem = {
+  title: string;
+  organization: string;
+  period: string;
+  detail?: string;
+};
+
+export const careerTimeline: CareerTimelineItem[] = [
   {
-    title: "Applications Packaging & Deployment",
-    organization: "HCLTech · Previous role",
-    detail:
-      "Application lifecycle management, deployment automation, PowerShell, Intune, SCCM, and troubleshooting.",
+    title: "Forward Deployment Engineer I (AI Developer)",
+    organization: "HCLTech · OpenAI Adoption CoE – CTO & Ecosystem",
+    period: "Nov 2026 – Present",
+    detail: "Exploring Agentic AI, RAG, MCP, and multi-agent architectures.",
   },
   {
-    title: "AI Developer",
-    organization: "HCLTech · OpenAI Adoption CoE",
-    detail:
-      "Enterprise AI adoption, API integrations, Codex enablement, and agentic workflow development.",
+    title: "AI Engineer",
+    organization: "HCLTech",
+    period: "Apr 2026 – Nov 2026",
+    detail: "Built AI agents and Generative AI solutions using enterprise APIs and cloud AI platforms.",
   },
   {
-    title: "Forward Deployment Engineer I",
-    organization: "HCLTech · Current role",
-    detail: "AI Developer within the OpenAI Adoption CoE – CTO & Ecosystem.",
+    title: "Senior Software Analyst",
+    organization: "HCLTech",
+    period: "Jun 2025 – Mar 2026",
+    detail: "Application Packaging Factory operations and enterprise application deployment.",
+  },
+  {
+    title: "Software Analyst",
+    organization: "HCLTech",
+    period: "Jan 2024 – May 2025",
+    detail: "Started a full-time role after completing 12 months of training.",
+  },
+  {
+    title: "Project Intern",
+    organization: "HCLTech · Internship",
+    period: "Jul 2023 – Dec 2023",
+  },
+  {
+    title: "Trainee",
+    organization: "HCLTech · Apprenticeship",
+    period: "Jan 2023 – Jun 2023",
+    detail: "Training in Operating Systems, Office 365, Exchange Server, and SharePoint.",
   },
 ];
 

@@ -286,7 +286,7 @@ function Experience() {
     <section className="section-shell section-block section-block--tint" id="experience">
       <Reveal>
         <SectionHeading eyebrow="Work experience" title="Building with teams,\nshipping with purpose." number="02">
-          Professional roles and focus areas, presented without unprovided dates or client details.
+          Career progression at HCLTech, with roles, dates, and work arrangements supplied.
         </SectionHeading>
       </Reveal>
       <div className="experience-list">
@@ -300,10 +300,17 @@ function Experience() {
                   <span className="company-label">{item.company}</span>
                 </div>
                 {item.organization && <p className="experience-org">{item.organization}</p>}
-                <p className="experience-summary">{item.summary}</p>
-                <div className="focus-list" aria-label="Role focus areas">
-                  {item.focus.map((focus) => <span key={focus}><Check size={13} />{focus}</span>)}
+                <div className="experience-meta">
+                  <span>{item.period}</span><i />{item.employmentType}<i />{item.workMode}
                 </div>
+                {item.summary && <p className="experience-summary">{item.summary}</p>}
+                {item.focus.length > 0 && <ul className="focus-list" aria-label="Role focus areas">
+                  {item.focus.map((focus) => <li key={focus}><Check size={13} />{focus}</li>)}
+                </ul>}
+                {item.roleSkills && <div className="experience-role-skills" aria-label="Skills used in this role">
+                  {item.roleSkills.map((skill) => <span key={skill}>{skill}</span>)}
+                  {item.additionalSkills !== undefined && <span>+{item.additionalSkills} skills</span>}
+                </div>}
               </div>
             </article>
           </Reveal>
@@ -605,7 +612,7 @@ function CareerTimeline() {
     <section className="section-shell section-block" id="timeline">
       <Reveal>
         <SectionHeading eyebrow="Career path" title="An evolving practice." number="09">
-          Role progression without dates, which were not supplied.
+          A timeline of roles and dates at HCLTech.
         </SectionHeading>
       </Reveal>
       <div className="timeline-list">
@@ -614,7 +621,7 @@ function CareerTimeline() {
             <article className="timeline-item">
               <span className="timeline-marker"><i /></span>
               <span className="timeline-index">0{index + 1}</span>
-              <div><h3>{item.title}</h3><p className="timeline-org">{item.organization}</p><p className="timeline-detail">{item.detail}</p></div>
+              <div><h3>{item.title}</h3><p className="timeline-org">{item.organization}</p><p className="timeline-period">{item.period}</p>{item.detail && <p className="timeline-detail">{item.detail}</p>}</div>
             </article>
           </Reveal>
         ))}
