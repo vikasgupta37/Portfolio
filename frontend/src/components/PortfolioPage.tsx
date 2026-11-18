@@ -29,6 +29,7 @@ import {
   Moon,
   Orbit,
   PanelsTopLeft,
+  Phone,
   ShieldCheck,
   Sparkles,
   Sun,
@@ -357,9 +358,19 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
     <div className={`project-visual project-visual--${index + 1}`} aria-hidden="true">
       <div className="project-visual-grid" />
       <span className="project-visual-index">{project.number} / CASE STUDY</span>
-      <div className="project-visual-icon"><VisualIcon size={42} strokeWidth={1.15} /></div>
-      <div className="project-visual-lines"><i /><i /><i /></div>
-      <span className="project-visual-mark">VG<span>.</span></span>
+      {project.imageUrl ? (
+        <img
+          className="project-visual-image"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.imageUrl}`}
+          alt=""
+        />
+      ) : (
+        <>
+          <div className="project-visual-icon"><VisualIcon size={42} strokeWidth={1.15} /></div>
+          <div className="project-visual-lines"><i /><i /><i /></div>
+          <span className="project-visual-mark">VG<span>.</span></span>
+        </>
+      )}
     </div>
   );
 }
@@ -644,6 +655,7 @@ function Contact() {
             For conversations about enterprise AI, adoption, and intelligent automation, reach me directly or connect through my profiles.
           </SectionHeading>
           <a className="contact-email" href={`mailto:${personalInfo.email}`}><span><Mail size={18} /></span>{personalInfo.email}<ArrowUpRight size={17} /></a>
+          <a className="contact-email contact-phone" href={`tel:${personalInfo.phone}`}><span><Phone size={18} /></span>{personalInfo.phone}<ArrowUpRight size={17} /></a>
           <div className="contact-socials">
             {socialLinks.map((item) => (
               <ExternalAnchor key={item.name} href={item.url} aria-label={item.name} title={item.name}>

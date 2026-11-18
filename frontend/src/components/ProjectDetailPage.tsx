@@ -40,9 +40,19 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
         </div>
         <div className="detail-art" aria-hidden="true">
           <div className="detail-art-grid" />
-          <div className="detail-art-ring detail-art-ring--one" />
-          <div className="detail-art-ring detail-art-ring--two" />
-          <div className="detail-art-icon"><Visual size={58} strokeWidth={1.15} /></div>
+          {project.imageUrl ? (
+            <img
+              className="detail-art-image"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.imageUrl}`}
+              alt=""
+            />
+          ) : (
+            <>
+              <div className="detail-art-ring detail-art-ring--one" />
+              <div className="detail-art-ring detail-art-ring--two" />
+              <div className="detail-art-icon"><Visual size={58} strokeWidth={1.15} /></div>
+            </>
+          )}
           <span className="detail-art-label">{project.number} / VG</span>
         </div>
       </section>

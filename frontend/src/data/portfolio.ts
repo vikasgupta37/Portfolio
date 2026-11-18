@@ -9,6 +9,7 @@ export type PersonalInfo = {
   location: string;
   experience: string;
   email: string;
+  phone: string;
   githubUsername: string;
   headline: string;
   heroHeadline: string;
@@ -27,6 +28,7 @@ export const personalInfo: PersonalInfo = {
   location: "Lucknow, Uttar Pradesh, India",
   experience: "3+ Years",
   email: "vikasgupta945431@gmail.com",
+  phone: "+918924077209",
   githubUsername: "vikasgupta37",
   photoUrl: "/images/vikas-gupta.jpg",
   resumeUrl: "/Vikas_Gupta_Resume.pdf",
@@ -284,6 +286,7 @@ export type Project = {
   integrations?: string[];
   proposedAgents?: string[];
   features?: string[];
+  imageUrl?: string;
   repositoryUrl: string | null;
   repositoryNote: string;
 };
@@ -296,6 +299,7 @@ export const projects: Project[] = [
     subtitle: "AI Crowd Intelligence Platform",
     category: "Agentic AI / Generative AI",
     status: "Status not specified",
+    imageUrl: "/images/swarma.png",
     description:
       "An AI-powered crowd intelligence and crowd management platform designed to support crowd monitoring, intelligent insights, and better decision-making.",
     achievement:

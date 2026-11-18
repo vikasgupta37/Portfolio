@@ -224,7 +224,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .project-visual--3 { background: radial-gradient(ellipse at 49% 55%, rgba(36, 173, 166, .17), transparent 62%), linear-gradient(125deg, #101f26, #11141e 72%); }
 .project-visual--4 { background: radial-gradient(ellipse at 49% 55%, rgba(196, 138, 69, .18), transparent 62%), linear-gradient(125deg, #261d18, #15141c 72%); }
 .project-visual-grid { position: absolute; inset: 0; opacity: .38; background-image: linear-gradient(rgba(163, 185, 220, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(163, 185, 220, .08) 1px, transparent 1px); background-size: 34px 34px; mask-image: radial-gradient(ellipse at center, #000 15%, transparent 85%); }
-.project-visual-index { position: absolute; top: 13px; left: 15px; color: rgba(207, 220, 244, .54); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .14em; }
+.project-visual-image { position: relative; z-index: 1; width: min(100%, 185px); height: 100%; object-fit: contain; }
+.project-visual-index { position: absolute; z-index: 2; top: 13px; left: 15px; color: rgba(207, 220, 244, .54); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .14em; }
 .project-visual-icon { position: relative; display: grid; place-items: center; width: 93px; height: 93px; border: 1px solid rgba(158, 188, 235, .35); border-radius: 28px; color: #a7ceff; background: linear-gradient(145deg, rgba(71, 121, 194, .18), rgba(102, 92, 161, .16)); box-shadow: 0 0 60px rgba(90, 146, 226, .18), inset 0 1px rgba(255, 255, 255, .12); transform: rotate(-6deg); }
 .project-visual--2 .project-visual-icon { color: #c5a7ff; border-radius: 26px 36px 27px 35px; }
 .project-visual--3 .project-visual-icon { color: #83e0d6; border-radius: 50%; }
@@ -285,6 +286,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .detail-status i { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); }
 .detail-status--proposed i { background: var(--violet); }
 .detail-art { position: relative; min-height: 330px; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: radial-gradient(ellipse at center, rgba(66, 126, 213, .17), transparent 62%), linear-gradient(145deg, var(--surface-solid), var(--bg-soft)); }
+.detail-art-image { position: relative; z-index: 1; width: min(100%, 330px); height: min(330px, 70vw); object-fit: contain; }
 .project-detail-page--apad .detail-art { background: radial-gradient(ellipse at center, rgba(162, 113, 220, .17), transparent 62%), linear-gradient(145deg, var(--surface-solid), var(--bg-soft)); }
 .project-detail-page--eventunity .detail-art { background: radial-gradient(ellipse at center, rgba(64, 191, 178, .15), transparent 62%), linear-gradient(145deg, var(--surface-solid), var(--bg-soft)); }
 .project-detail-page--vikas-agent .detail-art { background: radial-gradient(ellipse at center, rgba(219, 162, 92, .15), transparent 62%), linear-gradient(145deg, var(--surface-solid), var(--bg-soft)); }
@@ -292,7 +294,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .detail-art-ring { position: absolute; width: 240px; aspect-ratio: 1; border: 1px solid rgba(130, 172, 239, .2); border-radius: 50%; }
 .detail-art-ring--two { width: 180px; border-style: dashed; border-color: rgba(171, 141, 243, .27); animation: rotate-ring 55s linear infinite; }
 .detail-art-icon { position: relative; display: grid; place-items: center; width: 115px; height: 115px; border: 1px solid rgba(141, 180, 238, .34); border-radius: 34px; color: var(--blue-bright); background: rgba(46, 91, 153, .16); box-shadow: 0 0 60px rgba(67, 127, 215, .2); transform: rotate(-7deg); }
-.detail-art-label { position: absolute; right: 16px; bottom: 13px; color: var(--dim); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .14em; }
+.detail-art-label { position: absolute; z-index: 2; right: 16px; bottom: 13px; color: var(--dim); font-family: ui-monospace, monospace; font-size: 8px; letter-spacing: .14em; }
 .detail-content { max-width: 920px; }
 .detail-highlight { display: flex; gap: 17px; margin-top: 52px; padding: 23px; border: 1px solid rgba(232, 201, 128, .25); border-radius: 7px; background: linear-gradient(115deg, rgba(146, 111, 42, .12), var(--surface)); }
 .detail-highlight-icon { display: grid; place-items: center; flex: 0 0 auto; width: 40px; height: 40px; border: 1px solid rgba(232, 201, 128, .24); border-radius: 7px; color: #e7c978; background: rgba(232, 201, 128, .07); }
@@ -403,6 +405,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-glow { position: absolute; z-index: -1; left: 50%; top: 9%; width: 680px; height: 480px; transform: translateX(-50%); background: radial-gradient(ellipse, rgba(48, 108, 195, .14), transparent 68%); pointer-events: none; }
 .contact-layout { display: grid; grid-template-columns: 1fr minmax(320px, .72fr); align-items: center; gap: 10%; }
 .contact-email { display: inline-flex; align-items: center; gap: 11px; margin-top: 30px; color: var(--text); font-size: clamp(15px, 2vw, 18px); font-weight: 630; letter-spacing: -.02em; }
+.contact-phone { margin-top: 12px; }
 .contact-email > span { display: grid; place-items: center; width: 37px; height: 37px; color: var(--blue-bright); border: 1px solid var(--line); border-radius: 50%; }
 .contact-email > svg { color: var(--blue); }
 .contact-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
